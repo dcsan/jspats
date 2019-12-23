@@ -9,6 +9,7 @@ class Pig {
 
   state: string = 'new'
   name: string
+  // where: string // = 'farm'
 
   constructor(name: string) {
     this.name = name
@@ -25,7 +26,12 @@ class Pig {
   showState() {
     log('- state')
     log('  shared.state         =>', shared.state)
-    log(`  instance ${this.name} .state =>`, this.state)
+    log(`  instance ${ this.name } .state =>`, this.state)
+
+    // @ts-ignore
+    log(`  instance ${ this.name } .where =>`, this.where)
+    // @ts-ignore
+    log(`  Pig .where =>`, Pig.where)
   }
 
   sleep() {
@@ -40,7 +46,11 @@ class Pig {
 
 }
 
+// @ts-ignore
+Pig.prototype.where = 'earth'
+
 Pig.oink()
+
 
 const pig = new Pig('single') // singleton like instance
 // pig.oink()

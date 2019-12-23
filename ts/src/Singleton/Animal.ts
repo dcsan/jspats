@@ -1,3 +1,6 @@
+// @ts-nocheck
+// example uses lots of untyped 'this'
+
 interface IAnimal {
   name: string
   type: string
